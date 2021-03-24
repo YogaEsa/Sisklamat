@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <!-- BEGIN: Head -->
+    <head>
+        <meta charset="utf-8">
+        <link href="../static/images/mylogo.svg" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+        <meta name="keywords" content="admin template, Midone admin template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="author" content="LEFT4CODE">
+        <title>Dashboard - Sistem Klasifikasi Kalimat 1D CNN</title>
+        <!-- BEGIN: CSS Assets-->
+        <link rel="stylesheet" href="../static/css/app.css" />
+        <!-- END: CSS Assets-->
+    </head>
+    <!-- END: Head -->
+    <body class="app loading">
+        <!-- BEGIN: Mobile Menu -->
+        <div class="mobile-menu md:hidden">
+            <div class="mobile-menu-bar">
+                <a href="" class="flex mr-auto">
+                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="../static/images/logo.svg">
+                </a>
+                <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+            </div>
+            <ul class="border-t border-theme-24 py-5 hidden">
+                <li>
+                    <a href="index.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                        <div class="side-menu__title"> Beranda </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="side-menu-inbox.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                        <div class="side-menu__title"> Klasifikasi </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="side-menu-file-manager.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="database"></i> </div>
+                        <div class="side-menu__title"> Kelola Data Latih </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="side-menu-point-of-sale.html" class="menu menu--active">
+                        <div class="side-menu__icon"> <i data-feather="help-circle"></i> </div>
+                        <div class="side-menu__title"> Bantuan </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END: Mobile Menu -->
+        <div class="flex">
+            <!-- BEGIN: Side Menu -->
+            <nav class="side-nav">
+                <a href="" class="intro-x flex items-center pl-5 pt-4">
+                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="../static/images/mylogo.svg">
+                    <span class="hidden xl:block text-white text-lg ml-3"> SIS<span class="font-medium">-KLAMAT</span> </span>
+                </a>
+                <div class="side-nav__devider my-6"></div>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                            <div class="side-menu__title"> Beranda </div>
+                        </a>
+                    </li>
+                 
+                    <li>
+                        <a href="{{ url_for('klasifikasi')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                            <div class="side-menu__title"> Klasifikasi </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('datalatih')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="database"></i> </div>
+                            <div class="side-menu__title"> Kelola Data Latih </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('bantuan')}}" class="side-menu side-menu--active">
+                            <div class="side-menu__icon"> <i data-feather="help-circle"></i> </div>
+                            <div class="side-menu__title"> Bantuan </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- END: Side Menu -->
+            <!-- BEGIN: Content -->
+            <div class="content">
+                <!-- BEGIN: Top Bar -->
+                <div class="top-bar">
+                    <!-- BEGIN: Breadcrumb -->
+                    <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="" class="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Bantuan</a> </div>
+                    <!-- END: Breadcrumb -->
+                    
+                    <!-- BEGIN: Account Menu -->
+                    <div class="intro-x dropdown w-8 h-8 relative">
+                        <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+                            <img alt="Midone Tailwind HTML Admin Template" src="../static/images/1552561880935.jpg">
+                        </div>
+                        <div class="dropdown-box mt-10 absolute w-56 top-0 right-0 z-20">
+                            <div class="dropdown-box__content box bg-theme-38 text-white">
+                                <div class="p-4 border-b border-theme-40">
+                                    <div class="font-medium">Yoga Esa Mahendra</div>
+                                    <div class="text-xs text-theme-41">3411161156</div>
+                                </div>
+                                <div class="p-2">
+                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
+                                </div>
+                                <div class="p-2 border-t border-theme-40">
+                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i> Keluar </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+                <!-- END: Top Bar -->
+                <div class="grid grid-cols-12 gap-6">
+                   
+                    <div class="col-span-12 xxl:col-span-3 xxl:border-l border-theme-5 -mb-10 pb-10">
+                        <div class="xxl:pl-6 grid grid-cols-12 gap-6">
+                            <!-- BEGIN: Important Notes -->
+                            <div class="col-span-12 md:col-span-6 xl:col-span-12 xxl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3">
+                                <div class="intro-x flex items-center h-10">
+                                    <h2 class="text-lg font-medium truncate mr-auto">
+                                        Bantuan
+                                    </h2>
+                                    <button data-carousel="important-notes" data-target="prev" class="slick-navigator button px-2 border border-gray-400 flex items-center text-gray-700 mr-2"> <i data-feather="chevron-left" class="w-4 h-4"></i> </button>
+                                    <button data-carousel="important-notes" data-target="next" class="slick-navigator button px-2 border border-gray-400 flex items-center text-gray-700"> <i data-feather="chevron-right" class="w-4 h-4"></i> </button>
+                                </div>
+                                <div class="mt-5 intro-x">
+                                    <div class="slick-carousel box zoom-in" id="important-notes">
+                                        <div class="p-5">
+                                            <div class="font-medium truncate">Klasikasi Kalimat</div>
+                                            <div class="text-gray-500 mt-1">Tips Klasifikasi</div><br>
+                                            <div class="text-gray-600 text-justify mt-1">Inputan minimal kalimat adalah 3 kata dan untuk maksimalnya adalah 50 kata jika kurang dan lebih dari itu maka proses learning tidak akan berjalan sesuai dengan model yang dibuat</div>
+                                        </div>
+                                        <div class="p-5">
+                                            <div class="font-medium truncate">Kelola Data Latih</div>
+                                            <div class="text-gray-500 mt-1">Tips Kelola Data Latih</div><br>
+                                            <div class="text-gray-600 text-justify mt-1">Gunakan tool yang berada pada tabel seperti <i>sorting,pagging</i>, dan kolom pencarian untuk mengolah data  </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Important Notes -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Content -->
+        </div>
+        <!-- BEGIN: JS Assets-->
+        <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script> -->
+        <script src="../static/js/app.js"></script>
+        <!-- END: JS Assets-->
+    </body>
+</html>

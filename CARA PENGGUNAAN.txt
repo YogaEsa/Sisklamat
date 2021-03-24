@@ -1,0 +1,5 @@
+1. Simpan folder file program di C:\Users\namauser
+2. Buka Anaconda Prompt
+2. activate sesuai environment yang dibuat
+3. Change directori sesuai demgan program ((env) > cd klasifikasikalimat)
+4. (env) > python klasifikasikalimat.py

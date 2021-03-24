@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+    <!-- BEGIN: Head -->
+    <head>
+        <meta charset="utf-8">
+        <link href="../static/images/mylogo.svg" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+        <meta name="keywords" content="admin template, Midone admin template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="author" content="LEFT4CODE">
+        <title>Dashboard - Sistem Klasifikasi Kalimat 1D CNN</title>
+        <!-- BEGIN: CSS Assets-->
+        <link rel="stylesheet" href="../static/css/app.css" />
+        <!-- END: CSS Assets-->
+    </head>
+    <!-- END: Head -->
+    <body class="app loading">
+        <!-- BEGIN: Mobile Menu -->
+        <div class="mobile-menu md:hidden">
+            <div class="mobile-menu-bar">
+                <a href="" class="flex mr-auto">
+                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="../static/images/logo.svg">
+                </a>
+                <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
+            </div>
+            <ul class="border-t border-theme-24 py-5 hidden">
+                <li>
+                    <a href="index.html" class="menu menu--active">
+                        <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                        <div class="side-menu__title"> Beranda </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="side-menu-inbox.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                        <div class="side-menu__title"> Klasifikasi </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="side-menu-file-manager.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="database"></i> </div>
+                        <div class="side-menu__title"> Kelola Data Latih </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="side-menu-point-of-sale.html" class="menu">
+                        <div class="side-menu__icon"> <i data-feather="help-circle"></i> </div>
+                        <div class="side-menu__title"> Bantuan </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END: Mobile Menu -->
+        <div class="flex">
+            <!-- BEGIN: Side Menu -->
+            <nav class="side-nav">
+                <a href="" class="intro-x flex items-center pl-5 pt-4">
+                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="../static/images/mylogo.svg">
+                    <span class="hidden xl:block text-white text-lg ml-3"> SIS<span class="font-medium">-KLAMAT</span> </span>
+                </a>
+                <div class="side-nav__devider my-6"></div>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index')}}" class="side-menu side-menu--active">
+                            <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                            <div class="side-menu__title"> Beranda </div>
+                        </a>
+                    </li>
+                 
+                    <li>
+                        <a href="{{ url_for('klasifikasi')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                            <div class="side-menu__title"> Klasifikasi </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('datalatih')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="database"></i> </div>
+                            <div class="side-menu__title"> Kelola Data Latih </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('bantuan')}}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="help-circle"></i> </div>
+                            <div class="side-menu__title"> Bantuan </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- END: Side Menu -->
+            <!-- BEGIN: Content -->
+            <div class="content">
+                <!-- BEGIN: Top Bar -->
+                <div class="top-bar">
+                    <!-- BEGIN: Breadcrumb -->
+                    <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="" class="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Beranda</a> </div>
+                    <!-- END: Breadcrumb -->
+                    
+                    <!-- BEGIN: Account Menu -->
+                    <div class="intro-x dropdown w-8 h-8 relative">
+                        <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+                            <img alt="Midone Tailwind HTML Admin Template" src="../static/images/1552561880935.jpg">
+                        </div>
+                        <div class="dropdown-box mt-10 absolute w-56 top-0 right-0 z-20">
+                            <div class="dropdown-box__content box bg-theme-38 text-white">
+                                <div class="p-4 border-b border-theme-40">
+                                    <div class="font-medium">Yoga Esa Mahendra</div>
+                                    <div class="text-xs text-theme-41">3411161156</div>
+                                </div>
+                                <div class="p-2">
+                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
+                                </div>
+                                <div class="p-2 border-t border-theme-40">
+                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i> Keluar </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+                <!-- END: Top Bar -->
+                <div class="intro-y flex items-center mt-8">
+                    <h2 class="text-lg font-medium mr-auto">
+                        Halaman Utama
+                    </h2>
+                </div>
+                <!-- BEGIN: Profile Info -->
+                <div class="intro-y box px-5 pt-5 mt-5">
+                    <div class="flex flex-col lg:flex-row border-b border-gray-200 pb-5 -mx-5">
+                        <div class="flex flex-1 px-5 items-center justify-center lg:justify-start">
+                            <div class="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
+                                <img alt="Midone Tailwind HTML Admin Template" class="rounded-full" src="../static/images/unjani.png">
+                                <div class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-theme-1 rounded-full p-2"> <i class="w-4 h-4 text-white" data-feather="camera"></i> </div>
+                            </div>
+                            <div class="ml-5">
+                                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">Yoga Esa Mahendra</div>
+                                <div class="text-gray-600">3411161156</div>
+                                <div class="text-black-600">AIG-B</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
+                            <div class="text-xl  font-medium text-center lg:text-left lg:mt-5">Pembimbing 1</div>
+                            <div class="flex items-center justify-center lg:justify-start mt-2">
+                                <div class="mr-2 flex"> Ridwan Ilyas, S.Kom., M.T.  </div>
+                            </div>
+                            <div class="flex items-center justify-center lg:justify-start" style="margin-top: 10px;">
+                                <div class="mr-2 flex"> NID. 4121 829 90 </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
+                            <div class="text-xl  font-medium text-center lg:text-left lg:mt-5">Pembimbing 2</div>
+                            <div class="flex items-center justify-center lg:justify-start mt-2">
+                                <div class="mr-2 flex"> Fatan Kasyidi, S.Kom., M.T.  </div>
+                            </div>
+                            <div class="flex items-center justify-center lg:justify-start" style="margin-top: 10px;">
+                                <div class="mr-2 flex"> NID. 4121 009 92 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="nav-tabs flex flex-col center" style="text-align: center !important; margin:10px">KLASIFIKASI KALIMAT SITASI MENGGUNAKAN 
+                        1D CONVOLUTIONAL  NEURAL NETWORKS
+                        </div> -->
+                </div>
+                <!-- END: Profile Info -->
+                <div class="grid grid-cols-12 gap-6 mt-5">
+                                <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                    <div class="report-box zoom-in">
+                                        <div class="box p-5">
+                                            <div class="flex">
+                                                <i data-feather="database" class="report-box__icon text-theme-10"></i> 
+                                                <div class="ml-auto">
+                                                    <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" > kalimat </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-3xl font-bold leading-8 mt-6">{{jumdata}}</div>
+                                            <div class="text-base text-gray-600 mt-1">Data yang dilabeli</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                    <div class="report-box zoom-in">
+                                        <div class="box p-5">
+                                            <div class="flex">
+                                                <i data-feather="file-text" class="report-box__icon text-theme-11"></i> 
+                                                <div class="ml-auto">
+                                                <div class="report-box__indicator bg-theme-12 tooltip cursor-pointer" > kata </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-3xl font-bold leading-8 mt-6">{{vocab}}</div>
+                                            <div class="text-base text-gray-600 mt-1">Vocabulary</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 sm:col-span-6 xl:col-span-6 intro-y">
+                                    <div class="report-box zoom-in">
+                                        <div class="box p-5">
+                                            <div class="flex">
+                                                <i data-feather="activity" class="report-box__icon text-theme-9"></i>
+                                                <div class="ml-auto"> 
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" > kalimat </div>
+                                                </div>
+                                            </div>
+                                            <table width="100%">
+                                                <th style="border-right: 2px solid #efefef;" width="25%">
+                                                <div class="text-3xl font-bold leading-8 mt-6">{{point}}</div>
+                                                <div class="text-base text-gray-600 mt-1">Point</div>
+                                                </th>
+                                                <th style="border-right: 2px solid #efefef;" width="25%">
+                                                    <div class="text-3xl font-bold leading-8 mt-6">{{weak}}</div>
+                                                    <div class="text-base text-gray-600 mt-1">Weak</div>
+                                                </th>
+                                                <th style="border-right: 2px solid #efefef;" width="25%">
+                                                    <div class="text-3xl font-bold leading-8 mt-6">{{neut}}</div>
+                                                    <div class="text-base text-gray-600 mt-1">Neut</div>
+                                                </th>
+                                                <th width="25%">
+                                                    <div class="text-3xl font-bold leading-8 mt-6">{{co}}</div>
+                                                    <div class="text-base text-gray-600 mt-1">Comparison</div>
+                                                </th>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                    <div class="report-box zoom-in">
+                                        <div class="box p-5">
+                                            <div class="flex">
+                                                <i data-feather="user" class="report-box__icon text-theme-9"></i> 
+                                                <div class="ml-auto">
+                                                    <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4"></i> </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-3xl font-bold leading-8 mt-6">152.000</div>
+                                            <div class="text-base text-gray-600 mt-1">Unique Visitor</div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+            </div>
+            {% endblock %}
+            <!-- END: Content -->
+        </div>
+        <!-- BEGIN: JS Assets-->
+        <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script> -->
+        <script src="../static/js/app.js"></script>
+        <!-- END: JS Assets-->
+    </body>
+</html>
